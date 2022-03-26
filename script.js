@@ -7,34 +7,16 @@ var uppercase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L','M'
 
 var lowercase = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-var numeric = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var numeric = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,0, 1, 2, 3, 4, 5, 6, 7, 8, 9,0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-// randomizing characters and no before mixing. 
-// var random_special_characters = special_characters[Math.floor(Math.random(special_characters)* special_characters.length)];
-// var random_uppercase = uppercase[Math.floor(Math.random(uppercase)* uppercase.length)];
-// var random_lowercase = lowercase[Math.floor(Math.random(lowercase)* lowercase.length)];
-// var random_no = numeric[Math.floor(Math.floor(Math.random(numeric)*numeric.length))];
-// console.log(random_lowercase)
+
 // getting elements from DOM. 
+// and setting a variable for it.
 var pass_lengthEl = document.querySelector("#length");
 var lowercheckedEl= document.querySelector("#lowercase");
 var uppercheckedEl = document.querySelector("#uppercase");
 var numericcheckedEl = document.querySelector("#numeric");
 var specialcheckedEl = document.querySelector("#special");
-
-// // getting value of element
-// document.addEventListener("click", () => {
-//   var length_ = pass_lengthEl.value;
-//   var lower_ = lowercheckedEl.checked;
-//   var upper_ = uppercheckedEl.checked;
-//   var numeric_= numericcheckedEl.checked;
-//   var special_= specialcheckedEl.checked;
-  
-//   console.log (length_)
-// });
-
-
-
 
 
 // Write password to the #password input
@@ -45,10 +27,10 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+// generates password by adding concatinating and randomizing arrays.
 function generatePassword(){
  
-  
+ // sets different variables for the values we get from elements
   var length_ = pass_lengthEl.value;
   var upper_ = uppercheckedEl.checked;
   var numeric_= numericcheckedEl.checked;
@@ -56,21 +38,25 @@ function generatePassword(){
     
    
   
-  
+  // sets lowercase characters to be the pool from which to randomize
   let coolchars = lowercase;
+  //adds uppercase characters to pool
   if(upper_) coolchars = coolchars.concat(uppercase)
+  //adds numeric to characters to pool
   if(numeric_ )coolchars = coolchars.concat(numeric)
+  //adds special characters to pool
   if(special_ ) coolchars = coolchars.concat(special_characters)
  
-
+  // creates a array to add the random chartchters created
   var genpassword = []
+  //creates a loop to create random characters. 
   for(let i=0; i < length_; i++) {
     var char = coolchars[Math.floor(Math.random()* coolchars.length)];
     genpassword.push(char);  
     
     
   }
-  console.log(genpassword)
+  // returns the generated password as a string.
   return genpassword.join('');
   
   
