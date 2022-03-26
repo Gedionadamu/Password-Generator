@@ -33,7 +33,7 @@ var specialcheckedEl = document.querySelector("#special");
 //   console.log (length_)
 // });
 
-// console.log(confirm)
+
 
 
 
@@ -48,11 +48,11 @@ function writePassword() {
 
 function generatePassword(){
  
-  document.addEventListener("click", () => {
-    var length_ = pass_lengthEl.value;
-    var upper_ = uppercheckedEl.checked;
-    var numeric_= numericcheckedEl.checked;
-    var special_= specialcheckedEl.checked;
+  
+  var length_ = pass_lengthEl.value;
+  var upper_ = uppercheckedEl.checked;
+  var numeric_= numericcheckedEl.checked;
+  var special_= specialcheckedEl.checked;
     
    
   
@@ -71,9 +71,9 @@ function generatePassword(){
     
   }
   console.log(genpassword)
-  
-  });
   return genpassword.join('');
+  
+  
 }
 
 // Add event listener to generate button
