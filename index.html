@@ -27,8 +27,22 @@
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
+        <div class="second-card-header">
+          <h3>Password Criteria</h3>
+          <p> Default criteria will generate lowercase passwords only.</p>
+        </div>
+        <form class="check_boxes"><br>
+          <label for="length">Choose Password length (min = 8 and max = 128).</label>
+          <input type="number" id="length" name="length" min="8" max="128" value="8"><br>
+          <input type="checkbox" id="uppercase" name="uppercase" value="uppercase">
+          <label for="uppercase"> Add Uppercase Characters to Password.</label><br>
+          <input type="checkbox" id="numeric" name="numeric" value="numeric">
+          <label for="numeric"> Add Numbers to Password.</label><br>
+          <input type="checkbox" id="special" name="special" value="special">
+          <label for="special"> Add Special Characters to Password.</label><br><br>
+        </form>
       </div>
     </div>
-    <script src="script.js"></script>
+      <script src="script.js"></script>
   </body>
 </html>
